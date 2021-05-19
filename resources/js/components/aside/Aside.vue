@@ -24,98 +24,46 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open" id="select-vue">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item" @click="itemActive($route.path)">
-                <router-link to="/home" class="nav-link" :class="[(itemA == '/home') ? 'active':'']">
-                  <i class="far fa-circle nav-icon"></i>
+         
+              <li class="nav-item" >
+                <router-link to="/home" class="nav-link" :class="[(getRouteName == '/home') ? 'active':'']">
+                  <i class="fas fa-list nav-icon"></i>
                   <p>Account</p>
                 </router-link>
               </li>
-              <li class="nav-item" @click="itemActive($route.path)">
-                <router-link to="/detail" class="nav-link" :class="[(itemA == '/detail') ? 'active':'']">
-                  <i class="far fa-circle nav-icon"></i>
+              <li class="nav-item">
+                <router-link to="/detail" class="nav-link" :class="[(getRouteName == '/detail') ? 'active':'']">
+                  <i class="far fa-address-card nav-icon"></i>
                   <p>Detail</p>
+                </router-link>
+              </li> 
+              <li class="nav-item">
+                <router-link to="/create" class="nav-link" :class="[(getRouteName == '/create') ? 'active':'']">
+                  <i class="fas fa-user-plus nav-icon"></i>
+                  <p>Create</p>
                 </router-link>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link" >
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
+                <router-link to="/change" class="nav-link" :class="[(getRouteName == '/change') ? 'active':'']">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Change</p>
+                </router-link>
               </li>
-            </ul>
-          </li>
+            
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
+             <router-link to="/chartline" class="nav-link" :class="[(getRouteName == '/chartline') ? 'active':'']">
+                  <i class="nav-icon fas fa-chart-line"></i>
+                  <p>Chart Line</p>
+                </router-link>
+            
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Layout Options
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+            <router-link to="/chartbar" class="nav-link" :class="[(getRouteName == '/chartbar') ? 'active':'']">
+                  <i class="nav-icon fas fa-chart-bar"></i>
+                  <p>Chart Line</p>
+                </router-link>
+           </li>
+           
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -561,7 +509,12 @@
         name: "AppAside",
         data() {
             return {
-                itemA:this.$route.path // for first load and in curent path
+                itemA :  this.$route.path // for first load and in curent path
+            }
+        },
+       computed: {
+            getRouteName() {
+                return this.$route.path;
             }
         },
         methods: {

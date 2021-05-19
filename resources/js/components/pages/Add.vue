@@ -44,12 +44,7 @@
                     <input type="password"  class="form-control" v-model="datas.repass"  id="exampleInputPassword2" placeholder="Password">
                   </div>
                   <div class="form-group">
-                  <label>Minimal</label>
-                  <select class="form-control select2" style="width: 100%;"  v-model="datas.type">                    
-                    <option value="0">Customer</option>
-                    <option value="1">Store</option>
-                    <option value="2">Admin</option>
-                  </select>
+
                 </div>
                 </div>
                 <!-- /.card-body -->

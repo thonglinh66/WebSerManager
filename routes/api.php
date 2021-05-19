@@ -25,7 +25,12 @@ Route::group(['prefix' => '/'], function ($router) {
     Route::post('/post/create', 'HomeController@store');
     Route::get('/post/detail/{id}', 'HomeController@detail');
     Route::get('/home', 'HomeController@index');
+    Route::post('/post/upload', 'HomeController@upload');
     Route::delete('/post/delete/{id}', 'HomeController@delete');
+    Route::get('/chartline', 'HomeController@ChartLine');
+    Route::get('/chartbar', 'HomeController@ChartBar');
+
+    
 });
 
 

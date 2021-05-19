@@ -14,12 +14,13 @@
         <link rel="stylesheet" href="{{ asset('admin/lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/lte/dist/css/adminlte.min.cs') }}s">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        
     </head>
     <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
         <div id="app">
             <mainapp></mainapp>
         </div>
-
+      
         <script src="{{ asset('admin/js/app.js') }}"></script>
         <script src="{{ asset('admin/lte/plugins/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('admin/lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

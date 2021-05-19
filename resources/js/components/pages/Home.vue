@@ -154,7 +154,7 @@
             {
                 this.$store.commit('STORE_SUCCESS', id)
                 this.$router.push({
-                    name: "detail",
+                    path: "/detail",
                     params: {
                         studentId: id
                     }
